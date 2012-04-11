@@ -1,6 +1,14 @@
 pyCave Explorer
+===============
+
+.. split here
+
+Authors
+-------
+
 - Jennifer Dziuba
 - TJ Miller
+- Ralph Bean
 
 created for use on the OLPC
 
@@ -11,6 +19,7 @@ TO DO :
 - learn pygame
 
 - make grid
+
 	- decide resolution
 	- tag for current square
 	- tag for goal square
@@ -23,11 +32,14 @@ TO DO :
 	- way to track which squares are electrically connected
 
 - grid generator
+
 	- create genrator that randomly populates grid
 	- create solver to check if grid is valid
+
 		- re-create grid if invalid
 
 - create stat tracking interface
+
 	- incorporate with Journal
 
 --------------------
