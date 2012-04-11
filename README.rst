@@ -8,13 +8,27 @@ Authors
 
 - Jennifer Dziuba
 - TJ Miller
-- Ralph Bean
+- Ralph Bean (threebean)
 
 created for use on the OLPC
 
---------------------
+Development instructions for Linux
+----------------------------------
+
+threebean found that on Fedora 17, he had to do the following stuff to get
+pygame to stand up correctly in a virtualenv::
+
+  $ sudo yum -y install pygame pygame-devel
+  $ mkvirtualenv --system-site-packages pyCaveExplorer
+  (pyCaveExplorer) $ python setup.py develop
+
+Then I could run the game by typing::
+
+  (pyCaveExplorer) $ explore-the-cave
+
 
 TO DO :
+-------
 
 - learn pygame
 
