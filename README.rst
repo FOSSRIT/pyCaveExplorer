@@ -62,24 +62,26 @@ TO DO :
 Teach fourth grade electricity and magnetism
 http://schools.nyc.gov/Documents/STEM/Science/K8ScienceSS.pdf
 
-
 --------------------
+
 Some concepts:
 
--battery is placeable, but then anchored in place
--player gets certain number of lights per level
--infinite lengths of wire
--lights are placeable, but then anchored in place
--there are mirrors in the grid that will direct light in certain directions
+- battery is placeable, but then anchored in place
+- player gets certain number of lights per level
+- infinite lengths of wire
+- lights are placeable, but then anchored in place
+- there are mirrors in the grid that will direct light in certain directions
 
 Lighting Strategies:
 
--the player can quickly light an area in series, using one wire.
-	-provides average lighting
-	-requires less "commands"
-	-can short out the battery
+- the player can quickly light an area in series, using one wire.
 
--the player can take more time to light the area in parallel.
-	-provides better lighting
-	-requires more "commands"
-	-will not short out the battery
+	- provides average lighting
+	- requires less "commands"
+	- can short out the battery
+
+- the player can take more time to light the area in parallel.
+
+	- provides better lighting
+	- requires more "commands"
+	- will not short out the battery
