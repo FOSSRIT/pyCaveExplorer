@@ -44,6 +44,7 @@ TO DO :
 	- battery object
 	- treasure object
 	- way to track which squares are electrically connected
+	- mirrors ?
 
 - grid generator
 
