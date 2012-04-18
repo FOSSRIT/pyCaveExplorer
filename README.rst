@@ -9,6 +9,7 @@ Authors
 - Jennifer Dziuba
 - TJ Miller
 - Ralph Bean (threebean)
+- David Gay (oddshocks)
 
 created for use on the OLPC
 
