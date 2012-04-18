@@ -1,0 +1,1 @@
+﻿package code {		// represents player		public class Player extends GameElement{		public var countLights:int; // number of carried lights		public var countBatteries:int; // number of carried batteries		public function Player(aGame:Game) {			// constructor code			super(aGame);						isLit=true; // is always lit		}	}	}

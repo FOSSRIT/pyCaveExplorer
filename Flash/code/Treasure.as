@@ -1,0 +1,1 @@
+﻿package code {		// randomly dropped in available path squares	// give player shiny trinkets, or spare lights/batteries		public class Treasure extends GameElement{		public function Treasure(aGame:Game) {			// constructor code			super(aGame);		}	}	}

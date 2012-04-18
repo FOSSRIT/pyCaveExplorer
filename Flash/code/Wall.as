@@ -1,0 +1,1 @@
+﻿package code {		// block path of player		public class Wall extends GameElement{		public function Wall(aGame:Game) {			// constructor code			super(aGame);		}	}	}
