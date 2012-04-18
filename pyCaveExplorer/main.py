@@ -1,5 +1,15 @@
 """
-Main file for pyCaveExplorer
+Main file for pyCaveExplorer.
+
+Just a note -- you can run the script this way, by running
+
+  $ python main.py
+
+Or you can use the console_script entry-point defined in setup.py
+and just the following instead
+
+  $ explore-the-cave
+
 """
 
 import pygame
@@ -54,4 +64,5 @@ def main():
         pygame.display.flip()
 
 # Start the game
-main()  # this may be done in a different way in the future
+if __name__ == '__main__':
+    main()
