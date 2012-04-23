@@ -1,0 +1,1 @@
+﻿package code {		// base for empty path segments		public class Path extends GameElement{		public function Path(aGame:Game) {			// constructor code			super(aGame);		}	}	}
