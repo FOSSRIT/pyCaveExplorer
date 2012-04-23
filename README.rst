@@ -1,6 +1,6 @@
 pyCave Explorer
 ===============
-
+A cave-delving puzzle game for the OLPC
 .. split here
 
 Authors
@@ -10,8 +10,6 @@ Authors
 - TJ Miller
 - Ralph Bean (threebean)
 - David Gay (oddshocks)
-
-created for use on the OLPC
 
 Development instructions for Linux
 ----------------------------------
