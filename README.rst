@@ -1,6 +1,7 @@
 pyCave Explorer
 ===============
 A cave-delving puzzle game for the OLPC
+
 .. split here
 
 Authors
