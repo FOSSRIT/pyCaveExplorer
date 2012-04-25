@@ -1,0 +1,21 @@
+Thanks to the people who provided the free sounds that were
+used with pyCaveExplorer:
+
+Effects
+-------
+button_tap.wav, created by junggle on freesound.org
+electric_sparks.wav, created by Connum on freesound.org
+electric_woosh.wav, created by Glaneur de sons on freesound.org
+power_up.wav, created by LG on freesound.org
+switch.wav, created by TicTacShutUp on freesound.org
+
+Music
+-----
+cave_disturbed.wav, created by ERH on freesound.org
+cave_erie_reverb.mpp, created by Royal on freesound.org
+deep_cavern.wav, created by ERH on freesound.org
+water_drip_echo.mp3, created by roscoetoon on freesound.org
+
+Some of these files may need conversion before inclusion.
+
+If we have used your content and you'd prefer that we didn't, or if we can credit you in a different way, please let us know! :)
