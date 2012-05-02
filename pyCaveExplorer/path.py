@@ -12,5 +12,5 @@ class Path(GameElement):
         self.passable = True # can the player be in this square?
     def show_items(self):
         # Something about adding contents to the doc?
-        # TODO: David has to ask about this doc business :P
+        # TODO: I asked about the doc business, now I can finish coding here
         pass
