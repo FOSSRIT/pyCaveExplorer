@@ -12,9 +12,9 @@ and just the following instead
 
 """
 
-import pygame
 import sys
-
+import pygame
+from constants import *
 
 def main():
     """ This is the main entry point for the game.
@@ -27,41 +27,43 @@ def main():
     Awesome!
     """
 
-    ### CONSTANTS ###
-    BLACK = 0, 0, 0
-    WHITE = 255, 255, 255
-    GREY = 125, 125, 125
-    GOLD = 255, 204, 0
-
-    ### INITIALIZE ###
+    # Initialize pygame
     pygame.init()
 
-    ### WINDOW FRAME ###
-    screen = pygame.display.set_mode((640, 480))  # resolution tenative
+    # Set up the window
+    screen = pygame.display.set_mode((640, 480))
     pygame.display.set_caption("pyCaveExplorer")
 
-    ### GAME LOOP ###
-    clock = pygame.time.Clock()  # framerate control for animation
+    # Set up clock so we can have animations later
+    clock = pygame.time.Clock()
+
+    #######################
+    ### START GAME LOOP ###  # Can't handle my ridiciulous comment blocks?
+    #######################  # THEN GO HOME
+
     while True:
-        clock.tick(50)
+        clock.tick(30) # Set FPS to 30
 
-        # Event processing
+        ### Event handling ###
         for event in pygame.event.get():
-            # Quitting?
             if event.type == pygame.QUIT:
-                sys.exit()
+                sys.exit() # Quit the game
 
-        # Get a brown background
-        screen.fill(GREY)
+        # Get a grey background
+        screen.fill(COLOR_GREY)
 
         # Add a silly title-thing, just to do something
-
         title_font = pygame.font.SysFont("sans-serif", 48)
-        title_text = title_font.render("pyCaveExplorer", True, BLACK, GOLD)
+        title_text = title_font.render("pyCaveExplorer", True,
+            COLOR_BLACK, COLOR_GOLD)
         screen.blit(title_text, (200, 200))
 
         # Update the screen
         pygame.display.flip()
+
+    #######################
+    #### END GAME LOOP ####
+    #######################
 
 # Start the game
 if __name__ == '__main__':
