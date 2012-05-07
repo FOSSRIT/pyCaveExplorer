@@ -40,7 +40,7 @@ def display_menu():
     screen.blit(title_text, (200, 200))
 
 def start_game():
-    screen.fill(COLOR_BROWN)
+    game.draw()
 
 def main():
     """ This is the main entry point for the game.
