@@ -4,8 +4,8 @@ Holds constants for pyCaveExplorer
 
 # As a great person once said, only you can prevent hard coding of values
 
-TILESIZE_X = 50 # Width of tiles
-TILESIZE_Y = 50 # Height of tiles
+TILESIZE_X = 40 # Width of tiles
+TILESIZE_Y = 40 # Height of tiles
 
 GRID_WIDTH = 11 # Tiles fitting horizontally
 GRID_HEIGHT = 8 # Tiles fitting vertically
@@ -24,5 +24,9 @@ COLOR_RED = 176, 23, 31
 # Interface
 SCREEN_WIDTH = 640
 SCREEN_HEIGHT = 480
-GAME_WINDOW_WIDTH = int(SCREEN_WIDTH * .8)
-GAME_WINDOW_HEIGHT = int(SCREEN_HEIGHT * .8)
+GAME_WINDOW_ORIGIN_X = 25
+GAME_WINDOW_ORIGIN_Y = 25
+GAME_WINDOW_WIDTH = TILESIZE_X * GRID_WIDTH
+GAME_WINDOW_HEIGHT = TILESIZE_Y * GRID_HEIGHT
+#GRID_SPACING_X = GAME_WINDOW_WIDTH / GRID_WIDTH
+#GRID_SPACING_Y = GAME_WINDOW_HEIGHT / GRID_HEIGHT
