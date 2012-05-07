@@ -35,11 +35,11 @@ class Solver:
                 if square_type == 0:
                     self.grid[col.x][col.y] = \
                         Wall(col.x * TILESIZE_X, col.y * TILESIZE_Y)
-                    print "Wall generated at {}, {}".format(col.x, col.y)
+                    print("Wall generated at {}, {}".format(col.x, col.y))
                 elif square_type == 1:
                     self.grid[col.x][col.y] = \
                         Path(col.x * TILESIZE_X, col.y * TILESIZE_Y)
-                    print "Path generated at {}, {}".format(col.x, col.y)
+                    print("Path generated at {}, {}".format(col.x, col.y)),
                     path_type = random.randint(0, (TILE_TYPES - 1))
                     # 0 : make starting point (if not set)
                     # 1 : make goal point (if not set)
@@ -48,16 +48,16 @@ class Solver:
                     if path_type == 0 and not self.start_point:
                         self.start_point = Start()
                         self.grid[col.x][col.y].contents.append(self.start_point)
-                        print "Start point placed here!"
+                        print "\tStart point placed here!"
                     elif path_type == 1 and not self.goal_point:
                         self.goal_point = Goal()
                         self.grid[col.x][col.y].contents.append(self.goal_point)
-                        print "Goal point placed here!"
+                        print "\tGoal point placed here!"
                     elif path_type == 2:
                         self.grid[col.x][col.y].contents.append(Treasure())
-                        print "Treasure placed here!"
+                        print "\tTreasure placed here!"
                     else:
-                        pass
+                        print "\t"
 
     def test_grid(self):
         '''Test to see if the grid is good for play'''
