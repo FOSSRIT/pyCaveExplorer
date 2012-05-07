@@ -15,6 +15,32 @@ and just the following instead
 import sys
 import pygame
 from constants import *
+from pygame.locals import *
+from game import *
+
+# Initialize pygame
+pygame.init()
+
+# Set up the window
+screen = pygame.display.set_mode((640, 480))
+pygame.display.set_caption("pyCaveExplorer")
+
+# Set up clock so we can have animations later
+clock = pygame.time.Clock()
+
+quitting = False # is the game closing?
+
+game = None # the current game
+
+def display_menu():
+    screen.fill(COLOR_GREY)
+    title_font = pygame.font.SysFont("sans-serif", 48)
+    title_text = title_font.render("pyCaveExplorer", True,
+        COLOR_BLACK, COLOR_GOLD)
+    screen.blit(title_text, (200, 200))
+
+def start_game():
+    screen.fill(COLOR_BROWN)
 
 def main():
     """ This is the main entry point for the game.
@@ -26,37 +52,32 @@ def main():
 
     Awesome!
     """
-
-    # Initialize pygame
-    pygame.init()
-
-    # Set up the window
-    screen = pygame.display.set_mode((640, 480))
-    pygame.display.set_caption("pyCaveExplorer")
-
-    # Set up clock so we can have animations later
-    clock = pygame.time.Clock()
+    
+    global quitting
+    global game
 
     #######################
     ### START GAME LOOP ###  # Can't handle my ridiciulous comment blocks?
-    #######################  # THEN GO HOME
+    #######################  # THEN GET OUT OF THE KITCHEN
 
-    while True:
+    while not quitting:
         clock.tick(30) # Set FPS to 30
 
         ### Event handling ###
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit() # Quit the game
+                quitting = True
+            elif event.type == KEYDOWN:
+                if event.key == K_RETURN: # RETURN -- Start game
+                    game = Game()
+                elif event.key == K_ESCAPE: # ESCAPE -- Quit
+                    quitting = True
 
-        # Get a grey background
-        screen.fill(COLOR_GREY)
-
-        # Add a silly title-thing, just to do something
-        title_font = pygame.font.SysFont("sans-serif", 48)
-        title_text = title_font.render("pyCaveExplorer", True,
-            COLOR_BLACK, COLOR_GOLD)
-        screen.blit(title_text, (200, 200))
+        # Draw the screen
+        if game == None:
+            display_menu()
+        else:
+            start_game()
 
         # Update the screen
         pygame.display.flip()
@@ -64,6 +85,8 @@ def main():
     #######################
     #### END GAME LOOP ####
     #######################
+
+    pygame.quit() # quit the game
 
 # Start the game
 if __name__ == '__main__':
