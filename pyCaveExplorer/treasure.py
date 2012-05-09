@@ -5,8 +5,10 @@ Treasure object for pyCaveExplorer
 '''
 
 from element import GameElement
+from constants import *
 
 class Treasure(GameElement):
     def __init__(self, *args, **kwargs):
         super(Treasure, self).__init__(*args, **kwargs)
+        self.type = ELEMENT_TREASURE
         pass

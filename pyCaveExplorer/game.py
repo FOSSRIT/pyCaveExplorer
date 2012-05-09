@@ -36,20 +36,44 @@ class Game:
         for row in self.solver.grid:
             for item in row:
                 square_surface = pygame.Surface((TILESIZE_X, TILESIZE_Y))
+                contents_surface = pygame.Surface((TILESIZE_X / 2,
+                    TILESIZE_Y / 2))
+                
                 print "Item", item # DEBUG
                 print "item x", item.x # DEBUG
                 print "item y", item.y # DEBUG
+                
                 element = self.solver.grid[item.x / TILESIZE_X] \
                     [item.y / TILESIZE_Y]
+                
                 print "Element", element # DEBUG
+                
                 if element.type == ELEMENT_WALL:
                     # Draw dark grey square
                     square_surface.fill(COLOR_DARK_GREY)
-                    print "wall element at", item.x, item.y
+                    print "wall element at", item.x, item.y # DEBUG
                 elif element.type == ELEMENT_PATH:
                     # Draw light brown square (or nothing)
                     square_surface.fill(COLOR_LIGHT_BROWN)
-                    print "path element at", item.x, item.y
+                    print "path element at", item.x, item.y # DEBUG
+                    for i in element.contents:
+                        if i.type == ELEMENT_START:
+                            # Draw green square onto grid
+                            contents_surface.fill(COLOR_GREEN)
+                            print "start element here" # DEBUG
+                        elif i.type == ELEMENT_GOAL:
+                            # Draw blue square onto grid
+                            contents_surface.fill(COLOR_BLUE)
+                            print "goal element here" # DEBUG
+                        elif i.type == ELEMENT_TREASURE:
+                            # Draw gold square onto grid
+                            contents_surface.fill(COLOR_GOLD)
+                            print "treasure element here" # DEBUG
+                
+                # Draw the contents onto the square
+                square_surface.blit(contents_surface, (10, 10))
+
+                # Draw the square onto the grid
                 self.window.blit(square_surface, (item.x, item.y))
 
     def draw(self, surface):

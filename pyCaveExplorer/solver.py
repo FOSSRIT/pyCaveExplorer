@@ -43,6 +43,7 @@ class Solver:
                     # 1 : make goal point (if not set)
                     # 2 : make treasure
                     # 3-9 : do nothing
+                    self.grid[col.x][col.y].contents = []
                     if path_type == 0 and not self.start_point:
                         self.start_point = Start()
                         self.grid[col.x][col.y].contents.append(self.start_point)
