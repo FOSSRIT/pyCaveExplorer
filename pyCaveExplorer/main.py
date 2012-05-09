@@ -39,7 +39,7 @@ def display_menu():
         COLOR_BLACK, COLOR_GOLD)
     screen.blit(title_text, (200, 200))
 
-def start_game():
+def render_game():
     game.draw(screen)
 
 def main():
@@ -77,7 +77,7 @@ def main():
         if game == None:
             display_menu()
         else:
-            start_game()
+            render_game()
 
         # Update the screen
         pygame.display.flip()
