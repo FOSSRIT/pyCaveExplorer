@@ -7,9 +7,9 @@
 	public class Light extends PlaceableItem{
 		public var luminanceReach:int; // how squares light can travel from this location
 
-		public function Light(aGame:Game) {
+		public function Light(aGame:Game,posX:int,posY:int) {
 			// constructor code
-			super(aGame);
+			super(aGame,posX,posY);
 		}
 
 	}

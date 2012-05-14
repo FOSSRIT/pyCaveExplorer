@@ -18,10 +18,13 @@
 			solver = new Solver(this);
 			
 			gameGrid = solver.setUpGrid(); // create our game's grid
-			trace("grid created");
+			//trace("grid created");
 			
 			solver.populateGrid(gameGrid); // populate grid
-			trace("grid populated");
+			//trace("grid populated");
+			
+			//
+			solver.getGridPath(); // check paths
 		}
 		
 	}

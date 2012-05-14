@@ -4,9 +4,9 @@
 	
 	public class Goal extends PlaceableItem{
 
-		public function Goal(aGame:Game) {
+		public function Goal(aGame:Game,posX:int,posY:int) {
 			// constructor code
-			super(aGame);
+			super(aGame,posX,posY);
 		}
 
 	}

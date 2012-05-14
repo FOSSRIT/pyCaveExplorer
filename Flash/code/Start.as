@@ -5,9 +5,9 @@
 	
 	public class Start extends PlaceableItem{
 
-		public function Start(aGame:Game) {
+		public function Start(aGame:Game,posX:int,posY:int) {
 			// constructor code
-			super(aGame);
+			super(aGame,posX,posY);
 		}
 
 	}

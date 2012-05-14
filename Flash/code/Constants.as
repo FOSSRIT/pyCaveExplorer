@@ -11,6 +11,8 @@
 		public static const GRID_HEIGHT:int = 8; // tiles that fit vertically
 		public static const TILE_TYPES:int = 10; // weight for grid population
 		public static const CONTENTS_TYPES:int = 13; // weight for item population
+		
+		public static const MINIMUM_MOVES:int = 3; //number of moves the goal must be away from start
 
 		public function Constants() {
 			// intentionally left empty
