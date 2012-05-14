@@ -5,9 +5,9 @@
 	
 	public class Treasure extends PlaceableItem{
 
-		public function Treasure(aGame:Game) {
+		public function Treasure(aGame:Game,posX:int,posY:int) {
 			// constructor code
-			super(aGame);
+			super(aGame,posX,posY);
 		}
 
 	}

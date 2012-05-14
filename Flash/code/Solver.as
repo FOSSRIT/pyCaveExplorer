@@ -4,6 +4,8 @@
 	
 	public class Solver {
 		public var game:Game;
+		public var pathLengths:Array = new Array(); // stores lengths of working paths
+		public var shortestPath:int = 0; // shortest working path from start to goal
 
 		public function Solver(aGame:Game) {
 			// constructor code
@@ -89,10 +91,20 @@
 				}
 			}
 			
-			if(startSet && goalSet){ // check if there is a player and goal
-				trace("grid accepted");
-			}else{ // recreate grid if they're missing
-				trace("grid rejected, trying again");
+			if(startSet && goalSet){ // check if there is a player and goal and solvable path
+				//trace("has start and goal, tracing path");
+				for(i = 0; i < game.gameGrid.length; i++){
+					for(j = 0; j < game.gameGrid[i].length; j++){
+						if(game.gameGrid[i][j] is Wall){}
+						else{
+							game.gameGrid[i][j].findNeighbors();
+						}
+					}
+				}
+			} else{ // recreate grid if they're missing
+				//trace("missing start or goal, trying again");
+				//empty wall spaces array so we can repopulate
+				//wallSpaces = new Array();
 				populateGrid(aGrid);
 			}
 		}
@@ -109,7 +121,16 @@
 		}
 		
 		public function getGridPath(){ // find a path to the goal to check if grid is solveable
+			game.gameGrid[game.startPos.locX][game.startPos.locY].grabNeighbors(game.gameGrid[game.startPos.locX][game.startPos.locY],-1);
 			
+			if(pathLengths.length > 0){
+				trace("found paths, lengths: ");
+				for(var i:int = 0; i < pathLengths.length; i++){
+					trace(pathLengths[i]);
+				}
+			} else{
+				trace("no paths found");
+			}
 		}
 
 	}

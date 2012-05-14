@@ -4,7 +4,6 @@ Generates and solves the grid in pyCaveExplorer
 
 import random # perhaps be more specific?
 from constants import *
-from game import Game
 from path import Path
 from wall import Wall
 from treasure import Treasure
@@ -14,7 +13,6 @@ from goal import Goal
 class Solver:
     def __init__(self):
         # GAME INITIALIZATION #
-        self.game = Game() # the game object
         self.grid = [
             [Path(i, x) for x in range(GRID_HEIGHT)]
             for i in range(GRID_WIDTH)
@@ -45,6 +43,7 @@ class Solver:
                     # 1 : make goal point (if not set)
                     # 2 : make treasure
                     # 3-9 : do nothing
+                    self.grid[col.x][col.y].contents = []
                     if path_type == 0 and not self.start_point:
                         self.start_point = Start()
                         self.grid[col.x][col.y].contents.append(self.start_point)

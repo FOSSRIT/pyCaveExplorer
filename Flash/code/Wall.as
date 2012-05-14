@@ -4,9 +4,9 @@
 	
 	public class Wall extends Path{
 
-		public function Wall(aGame:Game) {
+		public function Wall(aX:int,aY:int,aGame:Game) {
 			// constructor code
-			super(aGame);
+			super(aX,aY,aGame);
 		}
 
 	}
