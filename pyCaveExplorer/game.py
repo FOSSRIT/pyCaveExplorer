@@ -48,24 +48,24 @@ class Game:
                 
                 print "Element", element # DEBUG
                 
-                if element.type == ELEMENT_WALL:
+                if element.group == ELEMENT_WALL:
                     # Draw dark grey square
                     square_surface.fill(COLOR_DARK_GREY)
                     print "wall element at", item.x, item.y # DEBUG
-                elif element.type == ELEMENT_PATH:
+                elif element.group == ELEMENT_PATH:
                     # Draw light brown square (or nothing)
                     square_surface.fill(COLOR_LIGHT_BROWN)
                     print "path element at", item.x, item.y # DEBUG
                     for i in element.contents:
-                        if i.type == ELEMENT_START:
+                        if i.group == ELEMENT_START:
                             # Draw green square onto grid
                             contents_surface.fill(COLOR_GREEN)
                             print "start element here" # DEBUG
-                        elif i.type == ELEMENT_GOAL:
+                        elif i.group == ELEMENT_GOAL:
                             # Draw blue square onto grid
                             contents_surface.fill(COLOR_BLUE)
                             print "goal element here" # DEBUG
-                        elif i.type == ELEMENT_TREASURE:
+                        elif i.group == ELEMENT_TREASURE:
                             # Draw gold square onto grid
                             contents_surface.fill(COLOR_GOLD)
                             print "treasure element here" # DEBUG

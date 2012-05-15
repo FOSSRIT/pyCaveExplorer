@@ -13,6 +13,8 @@ GRID_HEIGHT = 8 # Tiles fitting vertically
 TILE_TYPES = 10 # Weight for grid population
 CONTENTS_TYPES = 13 # Weight for item population
 
+MINIMUM_MOVES = 3 # Number of moves the goal must be from the start point
+
 # Colors
 COLOR_BLACK = 0, 0, 0
 COLOR_BLUE = 0, 0, 255

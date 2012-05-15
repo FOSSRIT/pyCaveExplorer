@@ -9,5 +9,5 @@ from constants import *
 class Start(GameElement):
     def __init__(self, *args, **kwargs):
         super(Start, self).__init__(*args, **kwargs)
-        self.type = ELEMENT_START
+        self.group = ELEMENT_START
         pass

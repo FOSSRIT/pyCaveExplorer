@@ -9,5 +9,5 @@ from constants import *
 class Wall(GameElement):
     def __init__(self, *args, **kwargs):
         super(Wall, self).__init__(*args, **kwargs)
-        self.type = ELEMENT_WALL
+        self.group = ELEMENT_WALL
         pass
