@@ -61,9 +61,12 @@ class Path(GameElement):
         step += 1
         print 'grab_neighbors() step print:', step # DEBUG
         
-        if self.contents[0].group == ELEMENT_GOAL:
-            print 'Found goal at step', step
-            self.parent_solver.path_lengths.append(step)
+        # For now we can do things like the below, because we can be sure
+        # that if the ELEMENT_GOAL is there, then it's at contents[0].
+        if len(self.contents) > 0:
+            if self.contents[0].group == ELEMENT_GOAL:
+                print 'Found goal at step', step
+                self.parent_solver.path_lengths.append(step)
         for d in DIRECTIONS:
             if self.neighbors[d] != None and self.neighbors[d] != path \
                 and self.neighbors[d].map_checked == False:
