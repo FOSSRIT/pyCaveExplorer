@@ -15,6 +15,9 @@ CONTENTS_TYPES = 13 # Weight for item population
 
 MINIMUM_MOVES = 3 # Number of moves the goal must be from the start point
 
+# Directions
+DIRECTIONS = ['n', 's', 'e', 'w']
+
 # Colors
 COLOR_BLACK = 0, 0, 0
 COLOR_BLUE = 0, 0, 255

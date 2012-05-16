@@ -32,7 +32,7 @@ class Game:
         '''
         # SOLVER
         self.solver = Solver()
-        self.solver.populate()
+        self.solver.populate(self.solver.grid)
         for row in self.solver.grid:
             for item in row:
                 square_surface = pygame.Surface((TILESIZE_X, TILESIZE_Y))
@@ -43,8 +43,7 @@ class Game:
                 print "item x", item.x # DEBUG
                 print "item y", item.y # DEBUG
                 
-                element = self.solver.grid[item.x / TILESIZE_X] \
-                    [item.y / TILESIZE_Y]
+                element = self.solver.grid[item.x][item.y]
                 
                 print "Element", element # DEBUG
                 
@@ -74,7 +73,9 @@ class Game:
                 square_surface.blit(contents_surface, (10, 10))
 
                 # Draw the square onto the grid
-                self.window.blit(square_surface, (item.x, item.y))
+                self.window.blit(square_surface, (item.x * TILESIZE_X,
+                    TILESIZE_Y * item.y))
+        self.solver.get_grid_path()
 
     def draw(self, surface):
         '''
