@@ -14,6 +14,7 @@ class Game:
         
         # GRID SETUP
         self.populate_grid() # fills in colors
+        print 'Drawing the grid'
         self.draw_grid() # draws grey grid lines
 
     def draw_grid(self):
@@ -75,8 +76,7 @@ class Game:
                 # Draw the square onto the grid
                 self.window.blit(square_surface, (item.x * TILESIZE_X,
                     TILESIZE_Y * item.y))
-        self.solver.get_grid_path()
-
+        
     def draw(self, surface):
         '''
         Draws the game window onto the specified surface
