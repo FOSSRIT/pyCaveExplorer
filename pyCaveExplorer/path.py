@@ -66,5 +66,5 @@ class Path(GameElement):
             self.parent_solver.path_lengths.append(step)
         for d in DIRECTIONS:
             if self.neighbors[d] != None and self.neighbors[d] != path \
-                and self.neighbors[d].map_checked != False:
+                and self.neighbors[d].map_checked == False:
                 self.neighbors[d].grab_neighbors(self, step)
