@@ -9,4 +9,4 @@ class GameElement(object):
         # Coordinates could be determined more elegantly another way
         self.x = x # x position on grid (index, not pixels)
         self.y = y # y position on grid (index, not pixels)
-        self.type = None
+        self.group = None
