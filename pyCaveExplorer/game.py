@@ -16,6 +16,7 @@ class Game:
         self.populate_grid() # fills in colors
         print 'Drawing the grid'
         self.draw_grid() # draws grey grid lines
+     
 
     def draw_grid(self):
         for x in range(GRID_WIDTH):
@@ -82,3 +83,6 @@ class Game:
         Draws the game window onto the specified surface
         '''
         surface.blit(self.window, (GAME_WINDOW_ORIGIN_X, GAME_WINDOW_ORIGIN_Y))
+        
+   
+    		

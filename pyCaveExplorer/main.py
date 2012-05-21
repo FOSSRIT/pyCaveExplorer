@@ -72,6 +72,19 @@ def main():
                     game = Game()
                 elif event.key == K_ESCAPE: # ESCAPE -- Quit
                     quitting = True
+                #elif event.key == K_UP:
+                	#move if neighbor exists
+                #elif event.key == K_Left:
+                	#move if neighbor exists
+                #elif event.key == K_Right:
+                	#move if neighbor exists
+                #elif event.key == K_Down:
+                	#move if neighbor exists
+               # else:
+                
+                #if game.player
+                	#game is over
+                
 
         # Draw the screen
         if game == None:
