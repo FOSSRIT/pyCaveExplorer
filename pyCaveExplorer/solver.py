@@ -39,11 +39,11 @@ class Solver:
 					if square_type == 0:
 						pop_grid[col.x][col.y] = \
 							Wall(col.x, col.y)
-						print("Wall generated at {}, {}".format(col.x, col.y))
+						# print("Wall generated at {}, {}".format(col.x, col.y))
 					elif square_type == 1:
 						pop_grid[col.x][col.y] = \
 							Path(self, col.x, col.y)
-						print("Path generated at {}, {}".format(col.x, col.y)),
+						# print("Path generated at {}, {}".format(col.x, col.y)),
 						path_type = random.randint(0, (TILE_TYPES - 1))
 						# 0 : make starting point (if not set)
 						# 1 : make goal point (if not set)
@@ -63,7 +63,8 @@ class Solver:
 								col.x, col.y))
 							print "\tTreasure placed here!"
 						else:
-							print "\t"
+							# print "\t"
+							pass
 			if self.start_point != None and self.goal_point != None:
 				print 'Solver has start and goal, getting neighbors...' # DEBUG
 				for row in pop_grid:
@@ -100,5 +101,5 @@ class Solver:
                 print l # DEBUG
             return True
         else:
-            print 'No paths found, retrying'
+            print 'No paths found, retrying \n'
             return False

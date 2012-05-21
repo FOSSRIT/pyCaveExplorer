@@ -40,35 +40,35 @@ class Game:
                 contents_surface = pygame.Surface((TILESIZE_X / 2,
                     TILESIZE_Y / 2))
                 
-                print "Item", item # DEBUG
-                print "item x", item.x # DEBUG
-                print "item y", item.y # DEBUG
+                # print "Item", item # DEBUG
+                # print "item x", item.x # DEBUG
+                # print "item y", item.y # DEBUG
                 
                 element = self.solver.grid[item.x][item.y]
                 
-                print "Element", element # DEBUG
+                # print "Element", element # DEBUG
                 
                 if element.group == ELEMENT_WALL:
                     # Draw dark grey square
                     square_surface.fill(COLOR_DARK_GREY)
-                    print "wall element at", item.x, item.y # DEBUG
+                    # print "wall element at", item.x, item.y # DEBUG
                 elif element.group == ELEMENT_PATH:
                     # Draw light brown square (or nothing)
                     square_surface.fill(COLOR_LIGHT_BROWN)
-                    print "path element at", item.x, item.y # DEBUG
+                    # print "path element at", item.x, item.y # DEBUG
                     for i in element.contents:
                         if i.group == ELEMENT_START:
                             # Draw green square onto grid
                             contents_surface.fill(COLOR_GREEN)
-                            print "start element here" # DEBUG
+                            # print "start element here" # DEBUG
                         elif i.group == ELEMENT_GOAL:
                             # Draw blue square onto grid
                             contents_surface.fill(COLOR_BLUE)
-                            print "goal element here" # DEBUG
+                            # print "goal element here" # DEBUG
                         elif i.group == ELEMENT_TREASURE:
                             # Draw gold square onto grid
                             contents_surface.fill(COLOR_GOLD)
-                            print "treasure element here" # DEBUG
+                            # print "treasure element here" # DEBUG
                 
                 # Draw the contents onto the square
                 square_surface.blit(contents_surface, (10, 10))
