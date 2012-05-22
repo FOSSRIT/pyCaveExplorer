@@ -2,6 +2,10 @@ pyCave Explorer
 ===============
 A cave-delving puzzle game for the OLPC
 
+Liscensing
+==============
+Academic Free Liscence (AFL) v3.0
+
 .. split here
 
 Authors
