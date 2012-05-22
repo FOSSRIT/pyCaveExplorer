@@ -23,84 +23,83 @@ pygame.init()
 
 # Set up the window
 screen = pygame.display.set_mode((640, 480))
-    pygame.display.set_caption("pyCaveExplorer")
+pygame.display.set_caption("pyCaveExplorer")
 
 # Set up clock so we can have animations later
 clock = pygame.time.Clock()
 
-    quitting = False # is the game closing?
+quitting = False # is the game closing?
 
-    game = None # the current game
+game = None # the current game
 
-    def display_menu():
-        screen.fill(COLOR_GREY)
-        title_font = pygame.font.SysFont("sans-serif", 48)
-        title_text = title_font.render("pyCaveExplorer", True,
-                COLOR_BLACK, COLOR_GOLD)
-        screen.blit(title_text, (200, 200))
+def display_menu():
+    screen.fill(COLOR_GREY)
+    title_font = pygame.font.SysFont("sans-serif", 48)
+    title_text = title_font.render("pyCaveExplorer", True,
+        COLOR_BLACK, COLOR_GOLD)
+    screen.blit(title_text, (200, 200))
 
-    def render_game():
-        game.draw(screen)
+def render_game():
+    game.draw(screen)
 
-        def main():
-            """ This is the main entry point for the game.
+def main():
+    """ This is the main entry point for the game.
 
-            You can find a reference to it in setup.py under the console-scripts
-            tentry-point.  This is the function that gets run when you type::
+    You can find a reference to it in setup.py under the console-scripts
+    entry-point.  This is the function that gets run when you type::
 
-            $ explore-the-cave
+    $ explore-the-cave
 
-            Awesome!
-            """
+    Awesome!
+    """
 
-            global quitting
-            global game
+    global quitting
+    global game
 
-            #######################
-            ### START GAME LOOP ###  # Can't handle my ridiciulous comment blocks?
-            #######################  # THEN GET OUT OF THE KITCHEN
+    #######################
+    ### START GAME LOOP ###  # Can't handle my ridiciulous comment blocks?
+    #######################  # THEN GET OUT OF THE KITCHEN
 
-            while not quitting:
-            clock.tick(30) # Set FPS to 30
-
-            ### Event handling ###
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    quitting = True
-                elif event.type == KEYDOWN:
-                    if event.key == K_RETURN: # RETURN -- Start game
-                        game = Game()
+    while not quitting:
+        clock.tick(30) # Set FPS to 30
+    
+        ### Event handling ###
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quitting = True
+            elif event.type == KEYDOWN:
+                if event.key == K_RETURN: # RETURN -- Start game
+                    game = Game()
                 elif event.key == K_ESCAPE: # ESCAPE -- Quit
                     quitting = True
-                #elif event.key == K_UP:
-                	#move if neighbor exists
-                #elif event.key == K_Left:
-                	#move if neighbor exists
-                #elif event.key == K_Right:
-                	#move if neighbor exists
-                #elif event.key == K_Down:
-                	#move if neighbor exists
+            #elif event.key == K_UP:
+                #move if neighbor exists
+            #elif event.key == K_Left:
+                #move if neighbor exists
+            #elif event.key == K_Right:
+                #move if neighbor exists
+            #elif event.key == K_Down:
+                #move if neighbor exists
                # else:
-                
-                #if game.player
-                	#game is over
-                
-
-                # Draw the screen
-                if game == None:
+            
+            #if game.player
+                #game is over
+        
+        # Draw the screen
+        if game == None:
             display_menu()
-                telse:
+        else:
             render_game()
+        
+        # Update the screen
+        pygame.display.flip()
 
-            # Update the screen
-            pygame.display.flip()
-
-            #######################
-            #### END GAME LOOP ####
-            #######################
+    #######################
+    #### END GAME LOOP ####
+    #######################
 
     pygame.quit() # quit the game
 
 # Start the game
 if __name__ == '__main__':
-    tmain()
+    main()

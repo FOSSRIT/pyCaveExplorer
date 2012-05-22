@@ -6,17 +6,23 @@ Also manages all GameElement objects
 import pygame
 from constants import *
 from solver import Solver
+from shadows import Shadows
 
 class Game:
     def __init__(self):
         # WINDOW SETUP
         self.window = pygame.Surface((GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT))
         
+        #SHADOW SETUP
+        self.shadow_grid = [
+            [Shadows(i, x) for x in range(GRID_HEIGHT)]
+                for i in range(GRID_WIDTH)
+        ]
+
         # GRID SETUP
         self.populate_grid() # fills in colors
         print 'Drawing the grid'
         self.draw_grid() # draws grey grid lines
-     
 
     def draw_grid(self):
         for x in range(GRID_WIDTH):
@@ -46,6 +52,9 @@ class Game:
                 # print "item y", item.y # DEBUG
                 
                 element = self.solver.grid[item.x][item.y]
+                element.shadow = self.shadow_grid[item.x][item.y]
+                if element.is_lit:
+                    element.shadow.darkness = LIGHT_MAX
                 
                 # print "Element", element # DEBUG
                 
@@ -77,6 +86,7 @@ class Game:
                 # Draw the square onto the grid
                 self.window.blit(square_surface, (item.x * TILESIZE_X,
                     TILESIZE_Y * item.y))
+        self.check_lighting()
         
     def draw(self, surface):
         '''
@@ -84,5 +94,36 @@ class Game:
         '''
         surface.blit(self.window, (GAME_WINDOW_ORIGIN_X, GAME_WINDOW_ORIGIN_Y))
         
-   
-    		
+    def check_lighting(self):
+        print "Editing shadows"
+        for row in self.solver.grid:
+            for item in row:
+                if item.is_lit:
+                    if item.y > 0:
+                        # print "editing north"
+                        north = self.solver.grid[item.x][item.y-1]
+                        north.shadow.darkness = LIGHT_HI
+                    if item.y < GRID_HEIGHT-1:
+                        # print "editing south"
+                        south = self.solver.grid[item.x][item.y+1]
+                        south.shadow.darkness = LIGHT_HI
+                    if item.x > 0:
+                        # print "editing west"
+                        west = self.solver.grid[item.x-1][item.y]
+                        west.shadow.darkness = LIGHT_HI
+                    if item.x < GRID_WIDTH-1:
+                        # print "editing east"
+                        east = self.solver.grid[item.x+1][item.y]
+                        east.shadow.darkness = LIGHT_HI
+        
+        self.update_shadows()
+        
+    def update_shadows(self):
+        print "Drawing shadows"
+        for row in self.shadow_grid:
+            for item in row:
+                shadow_surface = pygame.Surface((TILESIZE_X, TILESIZE_Y))
+                shadow_surface.set_alpha(item.darkness)
+                self.window.blit(shadow_surface, (item.x * TILESIZE_X,
+                    item.y * TILESIZE_Y))
+
