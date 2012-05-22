@@ -18,7 +18,7 @@ class Button:
     def handle_mouse_down(self, x, y):
         if self.rect.collidepoint(x, y):
             if self.command != None:
-                self.command.do()
+            self.command.do()
 
     def draw(self, surface):
         pygame.draw.rect(surface, COLOR_GREY, self.rect)

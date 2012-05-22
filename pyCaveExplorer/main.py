@@ -3,12 +3,12 @@ Main file for pyCaveExplorer.
 
 Just a note -- you can run the script this way, by running
 
-  $ python main.py
+$ python main.py
 
 Or you can use the console_script entry-point defined in setup.py
 and just the following instead
 
-  $ explore-the-cave
+$ explore-the-cave
 
 """
 
@@ -23,53 +23,53 @@ pygame.init()
 
 # Set up the window
 screen = pygame.display.set_mode((640, 480))
-pygame.display.set_caption("pyCaveExplorer")
+    pygame.display.set_caption("pyCaveExplorer")
 
 # Set up clock so we can have animations later
 clock = pygame.time.Clock()
 
-quitting = False # is the game closing?
+    quitting = False # is the game closing?
 
-game = None # the current game
+    game = None # the current game
 
-def display_menu():
-    screen.fill(COLOR_GREY)
-    title_font = pygame.font.SysFont("sans-serif", 48)
-    title_text = title_font.render("pyCaveExplorer", True,
-        COLOR_BLACK, COLOR_GOLD)
-    screen.blit(title_text, (200, 200))
+    def display_menu():
+        screen.fill(COLOR_GREY)
+        title_font = pygame.font.SysFont("sans-serif", 48)
+        title_text = title_font.render("pyCaveExplorer", True,
+                COLOR_BLACK, COLOR_GOLD)
+        screen.blit(title_text, (200, 200))
 
-def render_game():
-    game.draw(screen)
+    def render_game():
+        game.draw(screen)
 
-def main():
-    """ This is the main entry point for the game.
+        def main():
+            """ This is the main entry point for the game.
 
-    You can find a reference to it in setup.py under the console-scripts
-    entry-point.  This is the function that gets run when you type::
+            You can find a reference to it in setup.py under the console-scripts
+            tentry-point.  This is the function that gets run when you type::
 
-        $ explore-the-cave
+            $ explore-the-cave
 
-    Awesome!
-    """
-    
-    global quitting
-    global game
+            Awesome!
+            """
 
-    #######################
-    ### START GAME LOOP ###  # Can't handle my ridiciulous comment blocks?
-    #######################  # THEN GET OUT OF THE KITCHEN
+            global quitting
+            global game
 
-    while not quitting:
-        clock.tick(30) # Set FPS to 30
+            #######################
+            ### START GAME LOOP ###  # Can't handle my ridiciulous comment blocks?
+            #######################  # THEN GET OUT OF THE KITCHEN
 
-        ### Event handling ###
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                quitting = True
-            elif event.type == KEYDOWN:
-                if event.key == K_RETURN: # RETURN -- Start game
-                    game = Game()
+            while not quitting:
+            clock.tick(30) # Set FPS to 30
+
+            ### Event handling ###
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    quitting = True
+                elif event.type == KEYDOWN:
+                    if event.key == K_RETURN: # RETURN -- Start game
+                        game = Game()
                 elif event.key == K_ESCAPE: # ESCAPE -- Quit
                     quitting = True
                 #elif event.key == K_UP:
@@ -86,21 +86,21 @@ def main():
                 	#game is over
                 
 
-        # Draw the screen
-        if game == None:
+                # Draw the screen
+                if game == None:
             display_menu()
-        else:
+                telse:
             render_game()
 
-        # Update the screen
-        pygame.display.flip()
+            # Update the screen
+            pygame.display.flip()
 
-    #######################
-    #### END GAME LOOP ####
-    #######################
+            #######################
+            #### END GAME LOOP ####
+            #######################
 
     pygame.quit() # quit the game
 
 # Start the game
 if __name__ == '__main__':
-    main()
+    tmain()

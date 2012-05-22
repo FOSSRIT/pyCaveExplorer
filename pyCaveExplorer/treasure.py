@@ -1,7 +1,7 @@
 '''
 Treasure object for pyCaveExplorer
-    * randomly dropped in available path squares
-    * give player shiny trinkets or spare lights/batteries
+* randomly dropped in available path squares
+* give player shiny trinkets or spare lights/batteries
 '''
 
 from element import GameElement

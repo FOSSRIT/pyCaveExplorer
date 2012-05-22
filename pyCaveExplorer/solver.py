@@ -14,7 +14,7 @@ class Solver:
     def __init__(self):
         # GAME INITIALIZATION #
         self.grid = [
-            [Path(self, i, x) for x in range(GRID_HEIGHT)]
+        [Path(self, i, x) for x in range(GRID_HEIGHT)]
             for i in range(GRID_WIDTH)
         ]
         self.path_lengths = [] # stores lengths of working paths
@@ -22,8 +22,8 @@ class Solver:
         # self.game_grid = None
 
     def populate(self, pop_grid):
-        needs_work = True
-        while needs_work:
+            needs_work = True
+            while needs_work:
 			# self.game_grid = pop_grid
 			'''Populate the grid'''
 			# TODO: X and Y coordinates for drawing are being done strangley.
@@ -53,15 +53,16 @@ class Solver:
 						if path_type == 0 and not self.start_point:
 							self.start_point = Start(col.x, col.y)
 							pop_grid[col.x][col.y].contents.append(self.start_point)
-							print "\tStart point placed here!"
+							pop_grid[col.x][col.y].is_lit = True
+							# print "\tStart point placed here!"
 						elif path_type == 1 and not self.goal_point:
 							self.goal_point = Goal(col.x, col.y)
 							pop_grid[col.x][col.y].contents.append(self.goal_point)
-							print "\tGoal point placed here!"
+							# print "\tGoal point placed here!"
 						elif path_type == 2:
 							pop_grid[col.x][col.y].contents.append(Treasure(
 								col.x, col.y))
-							print "\tTreasure placed here!"
+							# print "\tTreasure placed here!"
 						else:
 							# print "\t"
 							pass
@@ -93,7 +94,7 @@ class Solver:
     def get_grid_path(self, pop_grid):
         '''Find a path to the goal to check if grid is solvable'''
         self.grid[self.start_point.x][self.start_point.y].grab_neighbors(
-            self.grid[self.start_point.x][self.start_point.y], -1)
+        self.grid[self.start_point.x][self.start_point.y], -1)
         # The above seems kinda janky. Man, I love that word. "Janky". -- odd
         if len(self.path_lengths) > 0:
             print 'Found paths, lengths:' # DEBUG
@@ -101,5 +102,5 @@ class Solver:
                 print l # DEBUG
             return True
         else:
-            print 'No paths found, retrying \n'
-            return False
+        print 'No paths found, retrying \n'
+        return False
